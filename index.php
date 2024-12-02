@@ -40,7 +40,24 @@
             </div>
             <!-- 切版 main -->
             <?php
-                include "./front/main.php"
+            $do=$_GET['do']??'main';
+            $file="./front/{$do}.php";
+            if(file_exists($file)){
+                include $file;
+            }else{
+                include "./front/main.php";
+            }
+            
+            // include "./front/{$do}.php";
+
+            // if($_GET['do']!='main'){
+            //     $do=$_GET['do'];
+            // }else {
+            //     $do='main';
+                
+            // }
+            // $do=(isset($_GET['do']))?$_GET['do']:'main';
+
             ?>
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
