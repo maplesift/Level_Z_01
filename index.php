@@ -42,23 +42,26 @@
             <?php
             $do=$_GET['do']??'main';
             $file="./front/{$do}.php";
+            
             if(file_exists($file)){
                 include $file;
             }else{
                 include "./front/main.php";
             }
+                ?>
+            <!-- 一行
+            include(file_exists($file))?$file:"./front/main.php";
             
-            // include "./front/{$do}.php";
-
-            // if($_GET['do']!='main'){
-            //     $do=$_GET['do'];
-            // }else {
-            //     $do='main';
+            include "./front/{$do}.php";
+            
+            if($_GET['do']!='main'){
+                    $do=$_GET['do'];
+                }else {
+                        $do='main';
                 
-            // }
-            // $do=(isset($_GET['do']))?$_GET['do']:'main';
+                    }
+                    $do=(isset($_GET['do']))?$_GET['do']:'main'; -->
 
-            ?>
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
                 <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
