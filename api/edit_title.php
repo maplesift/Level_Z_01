@@ -11,7 +11,8 @@ if(isset($_POST['id'])){
         }else {
             $row=$Title->find($id);
             $row['text']=$_POST['text'][$idx];
-            $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id);
+            $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
+
             $Title->save($row); 
         }
     }
