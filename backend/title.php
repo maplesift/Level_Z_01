@@ -30,6 +30,7 @@
                 <tbody>
                     <tr>
                         <td width="200px">
+                            <!-- include to admin.php -->
                             <input type="button"
                                 onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php&#39;)"
                                 value="新增網站標題圖片">
