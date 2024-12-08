@@ -1,3 +1,5 @@
+
+<!-- from backend/$do.php -->
 <h3 class="cent">新增動態文字廣告</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data">
@@ -9,7 +11,8 @@
 
     </table>
     <div class="cent">
-        <input type="hidden" name="table" value="ad">
+        <!-- *** 藏變數 val=ad  -->
+        <input type="hidden" name="table" value="<?=$_GET['table']?>">
 
         <input type="submit" value="新增">
         <input type="reset" value="重置">

@@ -32,6 +32,7 @@
                 ?>
                 <tr>
                     <td width="45%">
+                        <!--  -->
                         <img src="./upload/<?=$row['img'];?>" style="width:300px;height:30px;">
                     </td>
                     <td width="23%">
@@ -44,6 +45,7 @@
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
                     </td>
                     <td>
+                        <!--  -->
                         <input type="button"
                             onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>.php&#39;)"
                             value="更新圖片">
