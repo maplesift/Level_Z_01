@@ -14,6 +14,12 @@ if(!empty($_FILES['img']['tmp_name'])){
 };
 // 刪除陣列中的 table value
 unset($_POST['table']);
+
+if(isset($_POST['pw2'])){
+    unset($_POST['pw2']);
+}
+
+
 $$db->save($_POST);
 // 跳轉頁面
 to("../admin.php?do=$table");
@@ -22,6 +28,9 @@ to("../admin.php?do=$table");
 // $text=$_POST['text'];
 
 ?>
+
+
+
 <!-- 
  $_FILES['img']['name'] 為$_FILES中的array['img']
 例如
@@ -39,5 +48,3 @@ echo "<pre>";
 print_r($array1['img']['name']);
 echo "</pre>";
  -->
-
- 

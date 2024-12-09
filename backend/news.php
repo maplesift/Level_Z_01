@@ -27,7 +27,7 @@
                 <?php
                 // 參考
                 // $db=ucfirst($do);
-                // $rows=$do->all();
+                // $rows=$db->all();
 
                 $rows=$News->all();
                 // *********

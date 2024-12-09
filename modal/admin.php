@@ -5,7 +5,7 @@
     <table>
         <tr>
             <td>帳號：</td>
-            <td><input type="text" name="scc" id="text"></td>
+            <td><input type="text" name="acc" id="text"></td>
         </tr>
         <tr>
             <td>密碼：</td>
