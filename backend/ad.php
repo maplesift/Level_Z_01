@@ -1,4 +1,3 @@
-
 <!-- From admin.php -->
 
 <div class="di"
@@ -21,8 +20,8 @@
             <table width="100%">
                 <tr class="yel">
                     <td width="45%">動態文字廣告</td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
+                    <td width="10%">顯示</td>
+                    <td width="10%">刪除</td>
 
                 </tr>
                 <?php
