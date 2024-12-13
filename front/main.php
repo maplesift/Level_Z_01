@@ -1,13 +1,24 @@
 <div class="di"
     style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
     <marquee scrolldelay="120" direction="left" style="position:absolute; width:100%; height:40px;">
+        <?php
+        // 把陣列的資料遍歷至頁面上
+    $ads=$Ad->all(['sh'=>1]);
+foreach($ads as $ad){
+    echo $ad['text'];
+    // echo "&nbsp;&nbsp;";
+    echo str_repeat("&nbsp;",4);
+}
+?>
     </marquee>
     <div style="height:32px; display:block;"></div>
     <!--正中央-->
     <script>
     var lin = new Array();
     var now = 0;
+    //陣列長度大於1
     if (lin.length > 1) {
+        // setInterval 時間間隔
         setInterval("ww()", 3000);
         now = 1;
     }
