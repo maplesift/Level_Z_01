@@ -1,4 +1,5 @@
 <!-- from backend/$table -->
+<!-- 編輯 -->
 <?php
 
 include_once "db.php";
@@ -18,22 +19,20 @@ if(isset($_POST['id'])){
         }else {
             $row=$$db->find($id);
             switch ($table) {
-                case 'title':
-                    $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
-                    $row['text']=$_POST['text'][$idx];
-
-                    
-                    break;
+                // case 'title':
+                //     $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
+                //     $row['text']=$_POST['text'][$idx];
+                // break;
                 case 'admin':
                     // *********************
                         $row['acc']=$_POST['acc'][$idx];
                         $row['pw']=$_POST['pw'][$idx];
                     break;
                 case 'menu':
-                            $row['text']=$_POST['text'][$idx];
-                            $row['href']=$_POST['href'][$idx];
-                            $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
-                    break;
+                        $row['href']=$_POST['href'][$idx];
+                    // $row['text']=$_POST['text'][$idx];
+                            // $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
+                    // break;
                 
                 default:
                 // in_arrar (可當作複選的概念)

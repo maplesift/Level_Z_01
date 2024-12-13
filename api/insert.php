@@ -1,4 +1,5 @@
 <?php
+// 新增
 // from(從) ../modal/$table.php
 include_once "db.php";
 $table=$_POST['table'];

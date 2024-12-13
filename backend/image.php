@@ -23,12 +23,12 @@
                     <td></td>
                 </tr>
                 <?php
+                // 分頁
                 $div=3;
                 $total=$Image->count();
                 $pages=ceil($total/$div);
                 $now=$_GET['p']??1;
                 $start=($now-1)*$div;
-
 
                 // 空格很重要
                 $rows=$Image->all(" limit $start,$div");

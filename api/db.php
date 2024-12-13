@@ -87,12 +87,27 @@ class DB{
     /**
      * 把陣列轉成條件字串陣列
      */
+    
     function a2s($array){
         $tmp=[];
         foreach($array as $key => $value){
             $tmp[]="`$key`='$value'";
         }
         return $tmp;
+    }
+    /**
+     * 方便使用各個聚合函式
+     */
+    
+     protected function math($math,$col='id',$where=[]){
+        $sql="SELECT $math($col) FROM $this->table";
+
+        if(!empty($where)){
+            $tmp=$this->a2s($where);
+            $sql=$sql . " WHERE " . join(" && ", $tmp);
+        }
+
+        return $this->pdo->query($sql)->fetchColumn();
     }
 
     function max($col,$where=[]){
@@ -127,20 +142,7 @@ class DB{
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    /**
-     * 方便使用各個聚合函式
-     */
-    
-     protected function math($math,$col='id',$where=[]){
-        $sql="SELECT $math($col) FROM $this->table";
 
-        if(!empty($where)){
-            $tmp=$this->a2s($where);
-            $sql=$sql . " WHERE " . join(" && ", $tmp);
-        }
-
-        return $this->pdo->query($sql)->fetchColumn();
-    }
 
 }
 
@@ -167,3 +169,4 @@ $Mvim=new DB('mvims');
 $News=new DB('news');
 $Admin=new DB('admin');
 $Menu=new DB('menus');
+$Total=new DB('total');
