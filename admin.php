@@ -56,9 +56,11 @@ include_once "api/db.php";
                         <div class="mainmu">
                             進站總人數管理 </div>
                     </a>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=bottom">
-                        <div class="mainmu">
-                            頁尾版權資料管理 </div>
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="#"
+                        onclick="op('#cover','#cvr','./modal/bottom.php')">
+                        <div class=" mainmu">
+                            頁尾版權資料管理
+                        </div>
                     </a>
                     <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=news">
                         <div class="mainmu">

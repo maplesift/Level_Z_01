@@ -30,6 +30,7 @@ if(isset($_POST['id'])){
                     break;
                 case 'menu':
                         $row['href']=$_POST['href'][$idx];
+                    // 考試專用: 耦合性高
                     // $row['text']=$_POST['text'][$idx];
                             // $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
                     // break;
