@@ -20,12 +20,10 @@
             <table width="50%" style="margin:auto;">
 
                 <tr class="yel">
-                    <td width="45%">進站總人數：</td>
-                    <?php
-                    $row=$Bottom->find(1);
-                    ?>
+                    <td width="45%">頁尾版權資料:</td>
+
                     <td>
-                        <input type="text" name="bottom" value="<?=$row['bottom'];?>">
+                        <input type="text" name="bottom" value="<?=$Bottom->find(1)['bottom'];?>">
                     </td>
                 </tr>
 

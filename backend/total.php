@@ -21,11 +21,9 @@
 
                 <tr class="yel">
                     <td width="45%">進站總人數：</td>
-                    <?php
-                    $row=$Total->find(1);
-                    ?>
+
                     <td>
-                        <input type="number" name="total" value="<?=$row['total'];?>">
+                        <input type="text" name="total" value="<?=$Total->find(1)['total'];?>">
                     </td>
                 </tr>
 
