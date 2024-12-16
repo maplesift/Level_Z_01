@@ -24,7 +24,7 @@ class DB{
                 $where=$this->a2s($arg[0]);
                 $sql=$sql . " WHERE ". join(" && ",$where);
             }else{
-                //$sql=$sql.$arg[0];
+                // $sql=$sql.$arg[0];
                 $sql .= $arg[0];
 
             }
@@ -33,7 +33,7 @@ class DB{
         if(!empty($arg[1])){
             $sql=$sql . $arg[1];
         }
-
+        // echo "all:".$sql;
         return $this->fetchAll($sql);
     }
 
@@ -46,6 +46,7 @@ class DB{
         }else{
             $sql .= " WHERE `id`='$id' ";
         }
+        // echo "find:".$sql;
         return $this->fetchOne($sql);
     }
 
@@ -58,15 +59,14 @@ class DB{
             unset($array['id']);
             $set=$this->a2s($array);
             $sql ="UPDATE $this->table SET ".join(',',$set)." where `id`='$id'";
-                
         }else{
             //insert
             $cols=array_keys($array);
             $sql="INSERT INTO $this->table (`".join("`,`",$cols)."`) VALUES('".join("','",$array)."')";
         }
         
-        //echo $sql;
-        return $this->pdo->exec($sql);
+        // echo $sql;
+        // return $this->pdo->exec($sql);
     }
     
     function del($id){
@@ -79,7 +79,7 @@ class DB{
             $sql .= " WHERE `id`='$id' ";
         }
 
-        //echo $sql;  
+        //echo $sql;
         return $this->pdo->exec($sql);
     }
 
@@ -93,6 +93,7 @@ class DB{
         foreach($array as $key => $value){
             $tmp[]="`$key`='$value'";
         }
+        // dd($tmp);
         return $tmp;
     }
     /**
@@ -106,7 +107,7 @@ class DB{
             $tmp=$this->a2s($where);
             $sql=$sql . " WHERE " . join(" && ", $tmp);
         }
-
+        echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
 
@@ -123,6 +124,7 @@ class DB{
         return $this->avg('avg',$col,$where);
     }
     function count($where=[]){
+        
         return $this->math('count','*',$where);
     }
 
@@ -148,6 +150,7 @@ class DB{
 
 function q($sql){
     $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db03",'root','');
+    // echo $sql;
     return $pdo->query($sql)->fetchAll();
 }
 

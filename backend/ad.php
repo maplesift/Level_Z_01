@@ -25,9 +25,9 @@
 
                 </tr>
                 <?php
-                // $db=ucfirst($do);
-                // $rows=$$db->all();
-                $rows=$Ad->all();
+                $db=ucfirst($do);
+                $rows=$$db->all();
+                // $rows=$Ad->all();
                 // *********
                 foreach($rows as $row){
 

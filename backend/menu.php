@@ -30,9 +30,13 @@
                 <?php
                 // *******
                 $rows=$Menu->all(['main_id'=>0]);
+                dd($rows);
+                // dd($row);
+                
                 // *********
                 foreach($rows as $row){
-
+                    dd($row);
+                    
                 ?>
                 <tr>
 
@@ -44,6 +48,7 @@
                     </td>
                     <td width="7%">
                         <?=$Menu->count(['main_id'=>$row['id']]);?>
+                        <!-- <?=q("SELECT count(*) FROM `menus` WHERE `main_id`='1'") ;?> -->
                     </td>
                     <td width="7%">
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
@@ -60,6 +65,8 @@
                     <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>
                 <?php
+                            
+                            
                 }
                 ?>
                 </tbody>
