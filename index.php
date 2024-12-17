@@ -74,9 +74,32 @@ include_once "api/db.php";
                     style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;">管理登入</button>
                 <div style="width:89%; height:480px;" class="dbor">
                     <span class="t botli">校園映象區</span>
+                    <div class="cent" id="up" onclick="pp(1)">
+                        <!-- 上 -->
+                        <img src="./icon/up.jpg" alt="">
+                    </div>
+                    <div class="cent">
+                        <!-- img -->
+                        <?php
+                         $imgs=$Image->all(['sh'=>1]);
+                         foreach($imgs as $idx => $img){
+                            echo "<div class='im' id='ssaa{$idx}'>";
+                        echo "<img src='./upload/{$img['img']}' class='img1'> ";
+                        echo "
+                    </div>";
+                    }
+                    ?>
+                    </div>
+                    <div class="cent" id="dn" onclick="pp(2)">
+                        <!-- 下 -->
+                        <img src="./icon/dn.jpg" alt="">
+                    </div>
+
+
+
                     <script>
                     var nowpage = 0,
-                        num = 0;
+                        num = <?=$Image->count(['sh'=>1]);?>;
 
                     function pp(x) {
                         var s, t;
@@ -86,8 +109,10 @@ include_once "api/db.php";
                         if (x == 2 && (nowpage + 1) * 3 <= num * 1 + 3) {
                             nowpage++;
                         }
+                        // 所有圖片隱藏 
                         $(".im").hide()
                         for (s = 0; s <= 2; s++) {
+                            // 跑三次 =再來顯示3張
                             t = s * 1 + nowpage * 1;
                             $("#ssaa" + t).show()
                         }

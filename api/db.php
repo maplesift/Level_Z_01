@@ -66,7 +66,7 @@ class DB{
         }
         
         // echo $sql;
-        // return $this->pdo->exec($sql);
+        return $this->pdo->exec($sql);
     }
     
     function del($id){
