@@ -30,12 +30,12 @@
                 <?php
                 // *******
                 $rows=$Menu->all(['main_id'=>0]);
-                dd($rows);
+                // dd($rows);
                 // dd($row);
                 
                 // *********
                 foreach($rows as $row){
-                    dd($row);
+                    // dd($row);
                     
                 ?>
                 <tr>

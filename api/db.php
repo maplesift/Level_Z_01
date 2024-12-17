@@ -107,7 +107,8 @@ class DB{
             $tmp=$this->a2s($where);
             $sql=$sql . " WHERE " . join(" && ", $tmp);
         }
-        echo $sql;
+        // **********
+        // echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
 
