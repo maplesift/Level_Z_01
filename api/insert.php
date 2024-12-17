@@ -23,7 +23,7 @@ if(isset($_POST['pw2'])){
 
 $$db->save($_POST);
 // 跳轉頁面
-// to("../admin.php?do=$table");
+to("../admin.php?do=$table");
 
 // $_POST['img'];
 // $text=$_POST['text'];
