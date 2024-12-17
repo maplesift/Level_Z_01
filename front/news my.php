@@ -30,7 +30,7 @@
                 echo "<ol start='".($start+1)."'>";
                 
                 foreach ($rows as $row) {
-                    echo "<li class='sswww'>";
+                    echo "<li>";
                     echo mb_substr($row['text'],0,15);
                     // sapn 必須 style='display: none'
                     echo "<span class='all' style='display: none' >";
@@ -63,21 +63,22 @@
                 ?>
     </div>
 </div>
-<div id="alt"
-    style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;">
+<div id="altt" style="position: absolute; width: 350px; min-height: 100px;
+            background-color: rgb(255, 255, 204);
+            top: 200px; left: 570px; z-index: 99; display: none; 
+            padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial;
+            background-repeat: initial initial;">
 </div>
 <script>
-$(".sswww").hover(
+$(".ssaa li").hover(
     function() {
-        $("#alt").html("" + $(this).children(".all").html() + "").css({
-            "top": $(this).offset().top - 25
-        })
-        $("#alt").show()
+        $("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
+        $("#altt").show()
     }
 )
-$(".sswww").mouseout(
+$(".ssaa li").mouseout(
     function() {
-        $("#alt").hide()
+        $("#altt").hide()
     }
 )
 </script>
