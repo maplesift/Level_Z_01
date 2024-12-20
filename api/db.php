@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 class DB{
     protected $dsn="mysql:host=localhost;charset=utf8;dbname=db03";
@@ -175,3 +177,10 @@ $Admin=new DB('admin');
 $Menu=new DB('menus');
 $Total=new DB('total');
 $Bottom=new DB('bottom');
+
+if(!isset($_SESSION['total'])){
+    echo "hi 歡迎第一次來";
+    $_SESSION['total']=1;
+}else{
+    echo "再來喔";
+}
