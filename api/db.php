@@ -178,9 +178,11 @@ $Menu=new DB('menus');
 $Total=new DB('total');
 $Bottom=new DB('bottom');
 
+
 if(!isset($_SESSION['total'])){
-    echo "hi 歡迎第一次來";
+    echo "hi ";
     $_SESSION['total']=1;
-}else{
-    echo "再來喔";
+    $total=$Total->find(1);
+    $total['total']++;
+    $Total->save($total);
 }
