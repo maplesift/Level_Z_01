@@ -8,15 +8,12 @@
         <p class="t cent botli">進站總人數管理</p>
         <form method="post" action="./api/update_data.php">
             <table width="50%" style="margin:auto;">
-
                 <tr class="yel">
                     <td width="45%">進站總人數：</td>
-
                     <td>
                         <input type="text" name="total" value="<?=$Total->find(1)['total'];?>">
                     </td>
                 </tr>
-
             </table>
             <table style="margin-top:40px; width:70%;">
                 <tr>

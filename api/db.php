@@ -3,7 +3,7 @@ session_start();
 
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db03";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db003";
     protected $pdo;
     protected $table;
 
